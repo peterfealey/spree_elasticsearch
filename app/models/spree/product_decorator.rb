@@ -96,17 +96,17 @@ module Spree
 
         sorting = case @sorting
         when "name_asc"
-          [ {"name.untouched" => { order: "asc" }}, {"price" => { order: "asc" }}, "_score" ]
+          [ {"name" => { order: "asc" }}, {"price" => { order: "asc" }}, "_score" ]
         when "name_desc"
-          [ {"name.untouched" => { order: "desc" }}, {"price" => { order: "asc" }}, "_score" ]
+          [ {"name" => { order: "desc" }}, {"price" => { order: "asc" }}, "_score" ]
         when "price_asc"
-          [ {"price" => { order: "asc" }}, {"name.untouched" => { order: "asc" }}, "_score" ]
+          [ {"price" => { order: "asc" }}, {"name" => { order: "asc" }}, "_score" ]
         when "price_desc"
-          [ {"price" => { order: "desc" }}, {"name.untouched" => { order: "asc" }}, "_score" ]
+          [ {"price" => { order: "desc" }}, {"name" => { order: "asc" }}, "_score" ]
         when "score"
-          [ "_score", {"name.untouched" => { order: "asc" }}, {"price" => { order: "asc" }} ]
+          [ "_score", {"name" => { order: "asc" }}, {"price" => { order: "asc" }} ]
         else
-          [ {"name.untouched" => { order: "asc" }}, {"price" => { order: "asc" }}, "_score" ]
+          [ {"name" => { order: "asc" }}, {"price" => { order: "asc" }}, "_score" ]
         end
 
         # facets
